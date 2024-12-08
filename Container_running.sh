@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 运行 wayland 协议的容器h实例
+# 运行 wayland 协议的容器实例
 docker run -it \
     --name=test-wayland \
     -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY \
