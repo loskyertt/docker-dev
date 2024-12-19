@@ -9,15 +9,15 @@ docker run -it \
     --device=/dev/dri \
     ubuntu:latest
 
+apt install -y weston
+
 
 ## -----------------------------------------------------------------------------------
-
 # 运行 pytorch 容器实例
 docker run -it --name=pytorch --gpus=all -v ~/workspace/pytorch:/workspace pytorch/pytorch:latest
 
 
 ## -----------------------------------------------------------------------------------
-
 # 运行 qt 开发容器实例（使用 wayland 协议）
 docker run -it \
     --name=test-qt \
@@ -29,6 +29,8 @@ docker run -it \
 
 # 需要安装 OpenGL
 sudo apt install mesa-common-dev libgl1-mesa-dev
+
+apt install -y weston
 
 # 如果在构建时出错，则需要在容器中的 CMakeLists.txt 添加：
 set(CMAKE_PREFIX_PATH "/opt/Qt/6.8.0/gcc_64")
