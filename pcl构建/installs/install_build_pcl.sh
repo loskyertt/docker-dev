@@ -63,6 +63,3 @@ apt autoremove -y
 apt clean
 
 echo "所有依赖项已安装！准备编译 PCL。"
-
-# 设置安装目录
-# cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/root/pcl_1.14/
