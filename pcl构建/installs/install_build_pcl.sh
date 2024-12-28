@@ -3,11 +3,12 @@
 # 手动编译
 
 # 更新包列表并升级系统
-echo "更新系统并安装依赖项..."
+echo "Updating system packages..."
 apt update
 apt upgrade -y
 
 # 安装基础工具和开发环境
+echo "Installing essential tools and libraries..."
 apt install -y build-essential cmake git pkg-config clang clangd wget unzip
 
 # 安装系统库和硬件相关支持
@@ -62,4 +63,4 @@ apt install -y language-pack-zh-hans
 apt autoremove -y
 apt clean
 
-echo "所有依赖项已安装！准备编译 PCL。"
+echo "All dependencies have been installed successfully!"
