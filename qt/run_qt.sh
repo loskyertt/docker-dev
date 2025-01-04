@@ -26,5 +26,5 @@ xhost +local:docker
 
 # 若要使用 clangd（注意版本） 语法服务
 sudo apt install -y clangd-18
-# 然后创建链接
+# 然后创建链接（主要是 VSCode 会找 /usr/bin/clangd 或者 /usr/sbin/clangd）
 sudo ln -s /usr/bin/clangd-18 /usr/bin/clangd

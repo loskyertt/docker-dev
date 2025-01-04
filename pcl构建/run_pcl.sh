@@ -23,9 +23,13 @@ unzip source.zip -d .
 
 # 设置安装目录
 mkdir -p /opt/pcl_1.14
-cd pcl
-cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/pcl_1.14/
+
+cmake -B build \
+      -D CMAKE_BUILD_TYPE=Release \
+      -D CMAKE_INSTALL_PREFIX=/opt/pcl_1.14 \
+      -D ENABLE_PRECOMPILED_HEADERS=OFF
 # 编译
 cmake --build build -j8
 # 安装
-cmake --build build --target install
+cmake --install build
+# cmake --build build --target install
