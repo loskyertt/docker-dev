@@ -7,10 +7,10 @@ docker build -t loskyertt/hexo:latest .
 docker run -it --name=my-blog -p 4000:4000 -v blog:/root/blog loskyertt/hexo:latest
 
 # 把 .bashrc 复制到容器内
-docker cp ~/workspace/docker-running/config/.bashrc my_blog:/root/
+docker cp ~/workspace/docker-running/config/.bashrc my-blog:/root/
 
 # 把 .ssh 复制到容器内
-docker cp ~/.ssh my_blog:/root/
+docker cp ~/dotfiles/user/.ssh my-blog:/root/
 
 ## 进入容器更改 .ssh 及其子目录的权限
 # 将该文件及其子文件的所有者改为 root（当前用户）
