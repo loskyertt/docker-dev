@@ -10,10 +10,10 @@ WORKDIR /root/blog
 # 设置 npm 使用淘宝镜像源并安装 Hexo
 # RUN npm config set registry https://registry.npmmirror.com \
 #     && npm install hexo-cli -g
-RUN npm install hexo-cli -g
 
-# 初始化 Hexo 博客并安装依赖
-RUN hexo init . \
+# 安装 Hexo ，初始化 Hexo 博客并安装依赖
+RUN npm install hexo-cli -g \
+    && hexo init . \
     && npm install
 
 # 配置 Git
