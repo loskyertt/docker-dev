@@ -54,6 +54,11 @@ findbuild() {
 # export QT_STYLE_OVERRIDE=Fusion
 export QT_QPA_PLATFORM=xcb
 
+# flutter 配置
+export PATH="/home/sky/flutter/bin:$PATH"   # add flutter path
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
 
 ## -------------------------------------------- conda -------------------------------------------------------------
 # >>> conda initialize >>>
