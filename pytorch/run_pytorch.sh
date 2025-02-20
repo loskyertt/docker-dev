@@ -6,7 +6,7 @@ docker run -it --name=pytorch-dev --gpus=all -v ~/workspace/pytorch:/workspace p
 
 ## ----------------------------------------------- 字体配置（如果要使用 matplotib） ----------------------------------------------------------
 apt update
-apt install x11-apps fonts-noto-cjk language-pack-zh-hans
+apt install x11-apps fonts-noto-cjk
 
 
 # 注意 python3.10 版本，需要修改为对应容器中的版本
