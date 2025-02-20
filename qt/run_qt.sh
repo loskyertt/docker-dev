@@ -18,9 +18,6 @@ sudo apt upgrade
 # 需要在容器内安装 OpenGL 和中文字体
 sudo apt install -y mesa-common-dev libgl1-mesa-dev fonts-noto-cjk
 
-# wayland 需要
-sudo apt install -y weston
-
 # 通过访问权限
 xhost +local:docker 
 
