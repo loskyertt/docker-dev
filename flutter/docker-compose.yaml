@@ -1,0 +1,14 @@
+services:
+  flutter-dev:
+    image: ghcr.io/cirruslabs/flutter:3.28.0-0.1.pre
+    container_name: flutter-dev
+    environment:
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+    volumes:
+      - ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}:${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
+    devices:
+      - /dev/dri
+      - /dev/bus/usb:/dev/bus/usb
+    stdin_open: true
+    tty: true

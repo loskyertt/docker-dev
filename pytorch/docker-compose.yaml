@@ -1,0 +1,15 @@
+services:
+  pytorch-dev:
+    image: pytorch/pytorch:latest
+    container_name: pytorch-dev
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    volumes:
+      - ~/workspace/pytorch:/workspace
+    stdin_open: true
+    tty: true

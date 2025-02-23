@@ -1,0 +1,22 @@
+services:
+  hexo:
+    image: loskyertt/hexo:latest
+    build:
+      context: .
+      dockerfile: Hexo.dockerfile
+    container_name: my-blog
+    networks:
+      - my-bridge01
+    ports:
+      - "4000:4000"
+    volumes:
+      - blog:/root/blog
+    stdin_open: true
+    tty: true
+
+networks:
+  my-bridge01:
+    external: true
+
+volumes:
+  blog:

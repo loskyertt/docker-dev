@@ -1,0 +1,13 @@
+services:
+  qt-dev:
+    image: stateoftheartio/qt6:6.8-gcc-aqt
+    container_name: qt-dev
+    environment:
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+    volumes:
+      - ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}:${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
+    devices:
+      - /dev/dri
+    stdin_open: true
+    tty: true
