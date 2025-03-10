@@ -1,5 +1,5 @@
 # 基础镜像
-FROM node:latest
+FROM node:23.9.0
 
 # 维护者信息
 LABEL maintainer="loskyertt0403@gmail.com"
