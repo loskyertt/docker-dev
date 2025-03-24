@@ -8,8 +8,9 @@ WORKDIR /root/web-dev
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y locales \
-    && npm install -g cnpm \
-    && npm install -g @vue/cli \
+    && npm install -g npm@11.2.0 \
+    && npm install -g @vue/cli@latest \
+    && npm install -g create-vue \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
