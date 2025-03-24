@@ -1,4 +1,5 @@
-FROM node:23.9.0
+# 最新版本：node:23.9.0
+FROM node:22.14.0
 
 # 设置工作目录
 WORKDIR /root/web-dev
