@@ -17,5 +17,5 @@ RUN apt-get update \
 # 设置环境变量（防止 locale 问题）
 ENV LANG=zh_CN.UTF-8 LANGUAGE=zh_CN:zh LC_ALL=zh_CN.UTF-8
 
-# 进入 bash 交互模式，并加载 .bashrc
-CMD ["/bin/bash", "-l"]
+# 启动容器时进入交互模式
+CMD ["/bin/bash"]
