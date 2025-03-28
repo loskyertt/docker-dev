@@ -4,6 +4,9 @@ FROM node:22.14.0
 # 设置工作目录
 WORKDIR /root/web-dev
 
+COPY locale.gen /etc/locale.gen
+COPY .bashrc /root/.bashrc
+
 # 更新系统并安装所需软件
 RUN apt-get update \
     && apt-get upgrade -y \
