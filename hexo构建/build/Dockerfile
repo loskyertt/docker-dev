@@ -7,9 +7,10 @@ LABEL maintainer="loskyertt0403@gmail.com"
 # 工作目录
 WORKDIR /root/blog
 
+COPY .bashrc /root/.bashrc
+
 # 设置 npm 使用淘宝镜像源并安装 Hexo
-# RUN npm config set registry https://registry.npmmirror.com \
-#     && npm install hexo-cli -g
+# RUN npm config set registry https://registry.npmmirror.com
 
 # 安装 Hexo ，初始化 Hexo 博客并安装依赖
 RUN npm install hexo-cli -g \

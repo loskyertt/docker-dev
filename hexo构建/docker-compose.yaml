@@ -3,7 +3,7 @@ services:
     image: loskyertt/hexo:latest
     build:
       context: .
-      dockerfile: Hexo.dockerfile
+      dockerfile: Dockerfile
     container_name: my-blog
     networks:
       - my-bridge01
