@@ -73,12 +73,36 @@ export LC_ALL=zh_CN.UTF-8
 
 # 3.容器中运行 GUI 程序
 
-只需要在运行容器时加入下面参数即可：
+对于`X11`协议：
 ```bash
-docker run -e DISPLAY=$DISPLAY \
+docker run -it \
+    -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     --device /dev/dri \
     --name=your-container \
+    
+```
+这样可以确保`X11 UNIX socket`在容器内可用；`--device=/dev/dri`参数能把显卡驱动传进去，提高处理图形的性能。
+
+对于 Linux 下，还需要执行`xhost +local:docker`以添加`docker`用户的本地 X 访问权限，撤销使用`xhost -local:docker`。
+
+可以安装`x11`应用进行测试：
+```bash
+apt install -y x11-apps
+```
+
+---
+
+对于`Wayland`协议：
+```bash
+docker run -it \
+    -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY \
+    -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
+    -v $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY \
+    --device=/dev/dri \
     your-image
 ```
-这样可以确保`X11 UNIX socket`在容器内可用。对于 Linux 下，还需要执行`xhost +local:docker`以添加`docker`用户的本地 X 访问权限，撤销使用`xhost -local:docker`。
+可以安装`Wayland`应用进行测试：
+```bash
+apt install -y weston
+```
