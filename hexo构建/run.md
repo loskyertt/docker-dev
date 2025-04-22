@@ -9,12 +9,22 @@ docker buildx build -t loskyertt/hexo:node-v23.9.0 .
 # 2.运行容器实例
 
 ```bash
-docker run -it --name=my-blog -p 4000:4000 -v blog:/root/blog loskyertt/hexo:node-v23.9.0
+docker run -it --name=my-blog -p 4000:4000 -v ~/workspace/blog:/root/blog loskyertt/hexo:node-v23.9.0
 ```
 
 ---
 
-# 3.配置`ssh`密钥
+# 3.初始化 hexo
+
+```bash
+hexo init .
+
+npm install
+```
+
+---
+
+# 4.配置`ssh`密钥
 
 ```bash
 docker cp ~/dotfiles/user/.ssh my-blog:/root/
